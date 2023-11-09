@@ -13,7 +13,7 @@ import (
 const NROUNDSF = 8
 
 // NROUNDSP constant from Poseidon paper
-var NROUNDSP = 35
+var NROUNDSP = []int{56, 57, 56, 60, 60, 63, 64, 63, 60, 66, 60, 65, 70, 60, 64, 68}
 
 const spongeChunkSize = 31
 const spongeInputs = 16
@@ -64,8 +64,8 @@ func mix(state []*ff.Element, t int, m [][]*ff.Element) []*ff.Element {
 // Hash computes the Poseidon hash for the given inputs
 func Hash(inpBI []*big.Int) (*big.Int, error) {
 	t := len(inpBI) + 1
-	if len(inpBI) == 0 {
-		return nil, fmt.Errorf("invalid inputs length %d", len(inpBI))
+	if len(inpBI) == 0 || len(inpBI) > len(NROUNDSP) {
+		return nil, fmt.Errorf("invalid inputs length %d, max %d", len(inpBI), len(NROUNDSP))
 	}
 	if !utils.CheckBigIntArrayInField(inpBI) {
 		return nil, errors.New("inputs values not inside Finite Field")
@@ -73,7 +73,7 @@ func Hash(inpBI []*big.Int) (*big.Int, error) {
 	inp := utils.BigIntArrayToElementArray(inpBI)
 
 	nRoundsF := NROUNDSF
-	nRoundsP := NROUNDSP
+	nRoundsP := NROUNDSP[t-2]
 	C := c.c[t-2]
 	S := c.s[t-2]
 	M := c.m[t-2]
