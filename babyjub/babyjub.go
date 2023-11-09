@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/iden3/go-iden3-crypto/constants"
-	"github.com/iden3/go-iden3-crypto/ff"
-	"github.com/iden3/go-iden3-crypto/utils"
+	"github.com/n8wb/go-iden3-crypto/constants"
+	"github.com/n8wb/go-iden3-crypto/ff"
+	"github.com/n8wb/go-iden3-crypto/utils"
 )
 
 // A is one of the babyjub constants.

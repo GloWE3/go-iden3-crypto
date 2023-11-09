@@ -1,4 +1,4 @@
-module github.com/iden3/go-iden3-crypto
+module github.com/n8wb/go-iden3-crypto
 
 go 1.18
 

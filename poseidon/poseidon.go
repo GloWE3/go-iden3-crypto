@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"math/big"
 
-	"github.com/iden3/go-iden3-crypto/ff"
-	"github.com/iden3/go-iden3-crypto/utils"
+	"github.com/n8wb/go-iden3-crypto/ff"
+	"github.com/n8wb/go-iden3-crypto/utils"
 )
 
 // NROUNDSF constant from Poseidon paper
@@ -64,7 +64,7 @@ func mix(state []*ff.Element, t int, m [][]*ff.Element) []*ff.Element {
 // Hash computes the Poseidon hash for the given inputs
 func Hash(inpBI []*big.Int) (*big.Int, error) {
 	t := len(inpBI) + 1
-	if len(inpBI) == 0  {
+	if len(inpBI) == 0 {
 		return nil, fmt.Errorf("invalid inputs length %d", len(inpBI))
 	}
 	if !utils.CheckBigIntArrayInField(inpBI) {

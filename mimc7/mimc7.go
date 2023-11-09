@@ -4,10 +4,10 @@ import (
 	"errors"
 	"math/big"
 
-	_constants "github.com/iden3/go-iden3-crypto/constants"
-	"github.com/iden3/go-iden3-crypto/ff"
-	"github.com/iden3/go-iden3-crypto/keccak256"
-	"github.com/iden3/go-iden3-crypto/utils"
+	_constants "github.com/n8wb/go-iden3-crypto/constants"
+	"github.com/n8wb/go-iden3-crypto/ff"
+	"github.com/n8wb/go-iden3-crypto/keccak256"
+	"github.com/n8wb/go-iden3-crypto/utils"
 )
 
 // SEED defines the seed used to constants

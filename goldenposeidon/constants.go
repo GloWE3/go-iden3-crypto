@@ -1,6 +1,6 @@
 package poseidon
 
-import "github.com/iden3/go-iden3-crypto/ffg"
+import "github.com/n8wb/go-iden3-crypto/ffg"
 
 const (
 	// NROUNDSF const from original paper

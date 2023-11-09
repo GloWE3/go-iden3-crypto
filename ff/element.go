@@ -89,8 +89,9 @@ func NewElement() *Element {
 // NewElementFromUint64 returns a new Element from a uint64 value
 //
 // it is equivalent to
-// 		var v NewElement
-// 		v.SetUint64(...)
+//
+//	var v NewElement
+//	v.SetUint64(...)
 func NewElementFromUint64(v uint64) Element {
 	z := Element{v}
 	z.Mul(&z, &rSquare)
@@ -192,10 +193,9 @@ func (z *Element) IsUint64() bool {
 
 // Cmp compares (lexicographic order) z and x and returns:
 //
-//   -1 if z <  x
-//    0 if z == x
-//   +1 if z >  x
-//
+//	-1 if z <  x
+//	 0 if z == x
+//	+1 if z >  x
 func (z *Element) Cmp(x *Element) int {
 	_z := *z
 	_x := *x
