@@ -68,7 +68,7 @@ func Poseidon2(inputs []*big.Int) (*big.Int, error) {
 
 		// no matrix multiplication in the last round
 		if r < nRoundsF+nRoundsP-1 {
-			outputState := make([]*ff.Element, 5)
+			outputState := make([]*ff.Element, len(state))
 			for i := range state {
 				outputState[i] = stateReduce(state, t, i)
 			}

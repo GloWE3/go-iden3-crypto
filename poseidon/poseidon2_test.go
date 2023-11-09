@@ -56,4 +56,11 @@ func Test_Poseidon2(t *testing.T) {
 	})
 	require.NoError(t, err)
 	require.Equal(t, result.Text(16), "206a71a94faf9170deb4e645e072c072f346915f0f6de5781479abae9d75477a")
+
+	result, err = Poseidon2([]*big.Int{
+		new(big.Int).SetBytes(test1),
+		new(big.Int).SetBytes(test2),
+	})
+	require.NoError(t, err)
+	require.Equal(t, result.Text(16), "1ef84f8d32b0bd178f8f05a1d47e6d4c0504b2142824311b55f1b09acd5170a")
 }
